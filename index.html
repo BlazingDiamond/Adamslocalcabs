@@ -74,7 +74,7 @@
       position: absolute; inset: 0;
       background:
     linear-gradient(to bottom, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.7) 60%, rgba(10,10,10,1) 100%),
-    url('images/Gemini_Generated_Image_71c9wk71c9wk71c9.png') center / 100% 100% no-repeat;
+    url('images/IMG-20260618-WA0022.webp') center / 100% 100% no-repeat;
     }
     /* Karoo dust shimmer overlay */
     .hero-bg::after {
@@ -207,92 +207,6 @@
     }
     .stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
 
-    /* ── FLEET ── */
-    #fleet { background: var(--card); }
-    .fleet-inner { max-width: 1200px; margin: 0 auto; }
-    .fleet-header { margin-bottom: 56px; }
-    .fleet-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
-    }
-    .car-card {
-      background: var(--card2);
-      border-radius: 4px; overflow: hidden;
-      border: 1px solid var(--border);
-      transform: translateX(-60px); opacity: 0;
-      transition: transform 0.7s cubic-bezier(0.22,1,0.36,1), opacity 0.7s ease, box-shadow 0.3s;
-    }
-    .car-card.visible { transform: translateX(0); opacity: 1; }
-    .car-card:nth-child(2) { transition-delay: 0.12s; }
-    .car-card:nth-child(3) { transition-delay: 0.24s; }
-    .car-card:hover { box-shadow: 0 0 0 1px var(--orange), 0 16px 40px rgba(249,115,22,0.12); }
-    .car-image {
-      width: 100%; height: 220px; object-fit: cover;
-      display: block; background: #222;
-      /* placeholder gradient until real image is dropped in */
-      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
-    }
-    .car-placeholder {
-      width: 100%; height: 220px;
-      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 12px; color: var(--muted);
-    }
-    .car-placeholder svg { opacity: 0.4; }
-    .car-placeholder span { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
-    .car-info { padding: 22px 24px 26px; }
-    .car-tag {
-      display: inline-block;
-      background: rgba(249,115,22,0.15); color: var(--orange);
-      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 3px 10px; border-radius: 2px; margin-bottom: 10px;
-    }
-    .car-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem; letter-spacing: 0.03em; margin-bottom: 6px;
-    }
-    .car-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
-
-    /* ── DRIVERS ── */
-    #drivers { max-width: 1200px; margin: 0 auto; }
-    .drivers-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 28px; margin-top: 56px;
-    }
-    .driver-card {
-      background: var(--card); border-radius: 4px;
-      border: 1px solid var(--border);
-      padding: 32px 28px;
-      transition: border-color 0.25s, transform 0.25s;
-    }
-    .driver-card:hover { border-color: var(--orange); transform: translateY(-4px); }
-    .driver-avatar {
-      width: 80px; height: 80px; border-radius: 50%;
-      background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
-      border: 3px solid var(--border);
-      margin-bottom: 20px; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .driver-avatar svg { opacity: 0.4; }
-    .driver-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.5rem; letter-spacing: 0.03em; margin-bottom: 4px;
-    }
-    .driver-role {
-      font-size: 0.75rem; color: var(--orange); letter-spacing: 0.12em;
-      text-transform: uppercase; margin-bottom: 14px;
-    }
-    .driver-bio { font-size: 0.87rem; color: var(--muted); line-height: 1.7; }
-    .driver-badge {
-      margin-top: 18px; display: flex; align-items: center; gap: 8px;
-      font-size: 0.78rem; color: rgba(255,255,255,0.5);
-    }
-    .driver-badge::before {
-      content: '✓'; display: inline-flex; align-items: center; justify-content: center;
-      width: 18px; height: 18px; background: rgba(249,115,22,0.15);
-      color: var(--orange); font-size: 0.65rem; border-radius: 50%;
-      flex-shrink: 0;
-    }
-
     /* ── KAROO STRIP ── */
     #karoo-strip {
       height: 340px; position: relative; overflow: hidden; padding: 0;
@@ -321,12 +235,19 @@
     #reviews { background: var(--card); }
     .reviews-inner { max-width: 1200px; margin: 0 auto; }
     .reviews-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: grid; grid-template-columns: repeat(2, 1fr);
       gap: 24px; margin-top: 56px;
     }
     .review-card {
       background: var(--card2); border-radius: 4px;
-      border: 1px solid var(--border); padding: 30px 28px;
+      border: 1px solid var(--border); padding: 30px 28px 60px 28px;
+      position: relative; display: block; text-decoration: none; color: inherit;
+      cursor: pointer; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .review-card:hover {
+      border-color: var(--orange);
+      transform: scale(1.035);
+      box-shadow: 0 10px 28px rgba(249,115,22,0.18);
     }
     .stars { color: var(--orange); font-size: 1rem; letter-spacing: 2px; margin-bottom: 16px; }
     .review-text {
@@ -344,56 +265,140 @@
     .review-name { font-weight: 600; font-size: 0.88rem; }
     .review-location { font-size: 0.75rem; color: var(--muted); }
 
+    /* Review source badge — bottom-left corner of each review card */
+    .review-badge {
+      position: absolute; bottom: 18px; left: 28px;
+      display: flex; align-items: center; gap: 6px;
+      padding: 5px 10px; border-radius: 20px;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.02em; color: var(--muted);
+    }
+    .review-badge svg { flex-shrink: 0; }
+    .review-badge.tripadvisor { color: #34E0A1; border-color: rgba(52,224,161,0.3); }
+
     /* ── CONTACT ── */
-    #contact { max-width: 1100px; margin: 0 auto; }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 64px; align-items: start; margin-top: 56px;
-    }
-    .contact-desc {
-      font-size: 0.97rem; color: rgba(255,255,255,0.65);
-      line-height: 1.8; margin-bottom: 32px;
-    }
-    .contact-options { display: flex; flex-direction: column; gap: 16px; }
-    .contact-btn {
-      display: flex; align-items: center; gap: 16px;
-      padding: 18px 24px; border-radius: 4px;
-      text-decoration: none; transition: all 0.22s;
-      border: 1px solid var(--border);
-      background: var(--card);
-    }
-    .contact-btn:hover { border-color: var(--orange); background: rgba(249,115,22,0.06); transform: translateX(4px); }
-    .contact-icon {
-      width: 46px; height: 46px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; font-size: 1.2rem;
-    }
-    .contact-icon.wa { background: rgba(37,211,102,0.15); }
-    .contact-icon.ph { background: rgba(249,115,22,0.15); }
-    .contact-icon.em { background: rgba(100,160,255,0.12); }
-    .contact-btn-text .label {
-      font-size: 0.72rem; color: var(--muted); letter-spacing: 0.1em;
-      text-transform: uppercase; margin-bottom: 2px;
-    }
-    .contact-btn-text .value {
-      font-weight: 600; color: var(--white); font-size: 0.97rem;
-    }
-    .contact-map-placeholder {
-      width: 100%; height: 380px;
-      background: var(--card); border-radius: 4px;
-      border: 1px solid var(--border);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 12px; color: var(--muted);
-    }
-    .contact-map-placeholder .map-pin { font-size: 2rem; }
-    .contact-map-placeholder p { font-size: 0.85rem; letter-spacing: 0.05em; }
-    .coverage-tag {
-      margin-top: 20px;
-      background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.2);
-      border-radius: 3px; padding: 10px 16px;
-      font-size: 0.8rem; color: rgba(255,255,255,0.6);
-    }
-    .coverage-tag strong { color: var(--orange); }
+#contact { 
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: 40px 20px; /* Gives the layout breathing room on mobile */
+}
+
+.contact-grid {
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  gap: 64px; 
+  align-items: start; /* Ensures both columns start at the exact same top pixel line */
+}
+
+/* Typography Spacing inside the left column */
+.section-eyebrow {
+  margin-bottom: 8px;
+}
+.section-title {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.contact-desc {
+  font-size: 0.97rem; 
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8; 
+  margin-bottom: 32px;
+}
+
+/* Contact Button Layout */
+.contact-options { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 16px; 
+}
+.contact-btn {
+  display: flex; 
+  align-items: center; 
+  gap: 16px;
+  padding: 18px 24px; 
+  border-radius: 4px;
+  text-decoration: none; 
+  transition: all 0.22s;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.contact-btn:hover { 
+  border-color: var(--orange); 
+  background: rgba(249,115,22,0.06); 
+  transform: translateX(4px); 
+}
+.contact-icon {
+  width: 46px; 
+  height: 46px; 
+  border-radius: 50%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  flex-shrink: 0; 
+  font-size: 1.2rem;
+}
+.contact-icon.wa { background: rgba(37,211,102,0.15); }
+.contact-icon.ph { background: rgba(249,115,22,0.15); }
+.contact-icon.em { background: rgba(100,160,255,0.12); }
+
+.contact-btn-text .label {
+  font-size: 0.72rem; 
+  color: var(--muted); 
+  letter-spacing: 0.1em;
+  text-transform: uppercase; 
+  margin-bottom: 2px;
+}
+.contact-btn-text .value {
+  font-weight: 600; 
+  color: var(--white); 
+  font-size: 0.97rem;
+}
+
+/* ── RIGHT COLUMN MAP STYLING ── */
+.contact-map-placeholder {
+  position: relative;
+  width: 100%;       
+  max-width: 600px;  
+  border-radius: 6px;
+  overflow: hidden;  
+}
+
+/* Setting an explicit height makes sure object-fit triggers properly */
+.map-image-container {
+  width: 100%;
+  height: 380px;     
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Forces the image to perfectly fill the box container */
+.map-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.coverage-tag {
+  margin-top: 20px;
+  background: rgba(249,115,22,0.1); 
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: 4px; 
+  padding: 12px 16px;
+  font-size: 0.8rem; 
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+.coverage-tag strong { 
+  color: var(--orange); 
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr; /* Stack layout seamlessly on phones */
+    gap: 40px;
+  }
+}
 
     /* ── FOOTER ── */
     footer {
@@ -436,16 +441,15 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo">
-      <img src="images/Gemini_Generated_Image_94jxu194jxu194jx-removebg-preview.png" class="logo-img" alt="Nav Logo">
+      <img src="images/Gemini_Generated_Image_vh8n1dvh8n1dvh8n-removebg-preview.png" class="logo-img" alt="Nav Logo">
   </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#fleet">Fleet</a></li>
-      <li><a href="#drivers">Drivers</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="https://wa.me/27763884457" class="nav-cta" target="_blank">Book via WhatsApp</a>
+    <a href="https://wa.me/27763884457" class="nav-cta" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
   </nav>
 
   <!-- HERO -->
@@ -453,10 +457,10 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <div class="hero-eyebrow">Oudtshoorn's Local Cab</div>
-      <h1 class="hero-headline">Your Ride<br>Through the <em>Karoo</em></h1>
+      <h1 class="hero-headline">Just a<br>Whatsapp<br><em>Away</em></h1>
       <p class="hero-sub">We're a Local Affordable Cab/ Charter service in the heart of the Klein Karoo. We service the surrounding areas all along the garden route in the Western Cape.</p>
       <div class="hero-actions">
-        <a href="https://wa.me/27000000000" class="btn-primary" target="_blank">
+        <a href="https://wa.me/27763884457" class="btn-primary" target="_blank">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Book Now
         </a>
@@ -470,7 +474,7 @@
   <section>
     <div id="about">
       <div class="about-image-wrap">
-        <img src="images/wc_oudtshoorn.gif" alt="Oudtshoorn and the Karoo landscape" />
+        <img src="images/Screenshot 2026-06-17 at 13.12.37.png" alt="Oudtshoorn and the Karoo landscape" />
         <div class="about-badge">Proudly<br>Oudtshoorn</div>
       </div>
       <div class="about-text">
@@ -480,16 +484,16 @@
         <p class="section-body" style="margin-top:16px;">Whether you need a lift to the Cango Caves, a pickup from the George airport, or a reliable daily run around town — we've got you covered with safe, comfortable, and affordable transport.</p>
         <div class="about-stats">
           <div class="stat-box">
-            <div class="stat-number">5+</div>
+            <div class="stat-number">3+</div>
             <div class="stat-label">Years in Service</div>
           </div>
           <div class="stat-box">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Vehicles in Fleet</div>
+            <div class="stat-number">4</div>
+            <div class="stat-label">Vehicles in Fleet (one 8 seater)</div>
           </div>
           <div class="stat-box">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Availability</div>
+            <div class="stat-number">Mon-Fri</div>
+            <div class="stat-label">Availability (pre-bookings on Sundays)</div>
           </div>
           <div class="stat-box">
             <div class="stat-number">100%</div>
@@ -501,78 +505,6 @@
   </section>
 
   <div class="road-divider"></div>
-
-  <!-- FLEET -->
-  <section id="fleet">
-    <div class="fleet-inner">
-      <div class="fleet-header">
-        <div class="section-eyebrow">Our Fleet</div>
-        <h2 class="section-title">The <span>Cars</span></h2>
-        <p class="section-body">Clean, well-maintained, and ready to roll. Each vehicle is kept in top condition so every trip is a smooth one.</p>
-      </div>
-      <div class="fleet-grid">
-
-        <!-- Car 1 -->
-        <div class="car-card">
-          <div class="car-placeholder">
-            <!-- Replace this div with: <img src="your-car-1.jpg" class="car-image" alt="Car 1" /> -->
-            <svg width="80" height="48" viewBox="0 0 80 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="22" width="64" height="18" rx="3" fill="#F97316" opacity=".3"/>
-              <path d="M16 22 L22 10 H58 L64 22" stroke="#F97316" stroke-width="2" fill="none" opacity=".4"/>
-              <circle cx="22" cy="40" r="6" fill="#F97316" opacity=".4"/>
-              <circle cx="58" cy="40" r="6" fill="#F97316" opacity=".4"/>
-            </svg>
-            <span>Replace with car photo</span>
-          </div>
-          <div class="car-info">
-            <span class="car-tag">Sedan</span>
-            <div class="car-name">Vehicle One</div>
-            <p class="car-desc">Comfortable and fuel-efficient, ideal for town runs, airport transfers, and everyday travel across Oudtshoorn.</p>
-          </div>
-        </div>
-
-        <!-- Car 2 -->
-        <div class="car-card">
-          <div class="car-placeholder">
-            <!-- Replace this div with: <img src="your-car-2.jpg" class="car-image" alt="Car 2" /> -->
-            <svg width="80" height="48" viewBox="0 0 80 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="22" width="64" height="18" rx="3" fill="#F97316" opacity=".3"/>
-              <path d="M16 22 L22 10 H58 L64 22" stroke="#F97316" stroke-width="2" fill="none" opacity=".4"/>
-              <circle cx="22" cy="40" r="6" fill="#F97316" opacity=".4"/>
-              <circle cx="58" cy="40" r="6" fill="#F97316" opacity=".4"/>
-            </svg>
-            <span>Replace with car photo</span>
-          </div>
-          <div class="car-info">
-            <span class="car-tag">Sedan</span>
-            <div class="car-name">Vehicle Two</div>
-            <p class="car-desc">Spacious and reliable for longer routes — Oudtshoorn to George, Calitzdorp, or Uniondale, we'll get you there.</p>
-          </div>
-        </div>
-
-        <!-- Car 3 -->
-        <div class="car-card">
-          <div class="car-placeholder">
-            <!-- Replace this div with: <img src="your-car-3.jpg" class="car-image" alt="Car 3" /> -->
-            <svg width="80" height="48" viewBox="0 0 80 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="20" width="68" height="20" rx="3" fill="#F97316" opacity=".3"/>
-              <path d="M12 20 L16 8 H64 L68 20" stroke="#F97316" stroke-width="2" fill="none" opacity=".4"/>
-              <circle cx="22" cy="40" r="6" fill="#F97316" opacity=".4"/>
-              <circle cx="58" cy="40" r="6" fill="#F97316" opacity=".4"/>
-              <rect x="30" y="8" width="20" height="2" rx="1" fill="#F97316" opacity=".3"/>
-            </svg>
-            <span>Replace with car photo</span>
-          </div>
-          <div class="car-info">
-            <span class="car-tag">MPV</span>
-            <div class="car-name">Vehicle Three</div>
-            <p class="car-desc">Our larger vehicle for group trips, family outings, and luggage-heavy airport runs — plenty of room for everyone.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- KAROO STRIP -->
   <div id="karoo-strip">
@@ -591,7 +523,8 @@
       <p class="section-body">Don't just take our word for it — here's what our passengers across Oudtshoorn have to say.</p>
       <div class="reviews-grid">
 
-        <div class="review-card">
+        <!-- TODO: replace href with the real Google review link -->
+        <a href="https://share.google/Dou0ezLJ7MdY67h4i" class="review-card" target="_blank" rel="noopener noreferrer">
           <div class="stars">★★★★★</div>
           <p class="review-text">"ADAMS Local Tours/Taxi service was nothing short of brilliant. Lyle was very knowledgeable and friendly during our transit between Bufflesdrift and George Airport. He was even very accommodating when we wanted to swing by Kango Wildlife Ranch on route as we had time to kill. This was no issue for him and he was happy to keep hold of our bags for the duration of our visit. Wouldn’t hesitate to use Lyle again for any short or long journeys. Thank you again Lyle, Alfie & Lucy."</p>
           <div class="review-author">
@@ -601,22 +534,44 @@
               <div class="review-location">George</div>
             </div>
           </div>
-        </div>
+          <div class="review-badge">
+            <svg width="16" height="16" viewBox="0 0 48 48">
+              <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+              <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+              <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+              <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+            </svg>
+            <span>Google Review</span>
+          </div>
+        </a>
 
-        <div class="review-card">
+        <!-- TODO: replace href with the real TripAdvisor review link -->
+        <a href="https://www.tripadvisor.co.za/Attraction_Review-g312667-d28665702-Reviews-Adams_Local_Cabs-Oudtshoorn_Western_Cape.html" class="review-card" target="_blank" rel="noopener noreferrer">
           <div class="stars">★★★★★</div>
-          <p class="review-text">"This was the first time I used their service and it will certainly not be the last! Not only did they convey myself and my 81 year old friend safely, timeously and at an affordable rate, but assisted us with loading and unloading our purchases. The atmosphere was lighthearted but respectful. Also, there was no loud music or swearing or road rage!!! Their communication via Whatsapp was prompt and efficient and I would rate them ten stars if I could.
-A lovely experience!"</p>
+          <p class="review-text">"More than just a ride - A truly unforgettable experience with Adam’s Local Cabs
+            Adams Local Cabs — and Lyle in particular — made my time in Oudtshoorn truly unforgettable. I spent three weeks in Oudtshoorn and relied on Lyle and his cab service throughout my stay, and every single ride was easy, seamless, and completely worry-free. Lyle is quite the character: lively, energetic, bubbly, and an incredible conversationalist. Lyle brings the sunshine everywhere he goes. From the moment you step into his cab, you feel welcomed, safe, and genuinely cared for. He is extremely knowledgeable about Oudtshoorn and the surrounding areas, and he turned every drive into an entertaining and informative experience by sharing local stories, history, and insights. What made the experience even more special was how thoughtful he is — he happily stopped along the way to take photos of my friend and me, and they turned out amazing. Those little moments made a big difference and showed just how much pride and care he puts into his work. Lyle is a friendly face I will never forget, and I truly hope to see him again in the future. I would 100% recommend Admas Local Cabs to anyone visiting the area. Lyle is safe, reliable, kind, and a bright soul who had a genuinely positive impact on my stay in Oudtshoorn."</p>
           <div class="review-author">
-            <div class="review-initials">MM</div>
+            <div class="review-initials">A</div>
             <div>
-              <div class="review-name">Manda M.</div>
+              <div class="review-name">Amber</div>
               <div class="review-location">Oudtshoorn</div>
             </div>
           </div>
-        </div>
+          <div class="review-badge tripadvisor">
+            <svg width="16" height="16" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="11" fill="#34E0A1"/>
+              <circle cx="7.8" cy="11" r="3.3" fill="#fff"/>
+              <circle cx="16.2" cy="11" r="3.3" fill="#fff"/>
+              <circle cx="7.8" cy="11" r="1.3" fill="#0A0A0A"/>
+              <circle cx="16.2" cy="11" r="1.3" fill="#0A0A0A"/>
+              <path d="M12 11.2l-1.3 2.1h2.6z" fill="#0A0A0A"/>
+            </svg>
+            <span>TripAdvisor</span>
+          </div>
+        </a>
 
-        <div class="review-card">
+        <!-- TODO: replace href with the real Google review link -->
+        <a href="https://share.google/ON7n9KUVzAjYyIQh8" class="review-card" target="_blank" rel="noopener noreferrer">
           <div class="stars">★★★★★</div>
           <p class="review-text">"Genuinely cannot recommend enough!
 
@@ -628,7 +583,41 @@ Lyle went the extra mile for us and really did his best to accommodate every wis
               <div class="review-location">Visiting from Cape Town</div>
             </div>
           </div>
-        </div>
+          <div class="review-badge">
+            <svg width="16" height="16" viewBox="0 0 48 48">
+              <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+              <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+              <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+              <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+            </svg>
+            <span>Google Review</span>
+          </div>
+        </a>
+
+        <!-- TODO: replace href with the real TripAdvisor review link -->
+        <a href="https://www.tripadvisor.co.za/Attraction_Review-g312667-d28665702-Reviews-Adams_Local_Cabs-Oudtshoorn_Western_Cape.html" class="review-card" target="_blank" rel="noopener noreferrer">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Adams Local Cab - Quick, efficient, and reliable cab service!
+            Adams Local Cab - Quick, efficient, and reliable cab service! We were in a difficult situation as my mother needed to attend an urgent appointment. We thought we would be back in Oudtshoorn in time, but unfortunately that wasn’t the case. Booking was easy and hassle-free. The team was extremely accommodating, took her to her appointment, and picked her up afterwards without any issues. They were willing to go the extra mile when it really mattered. I will definitely recommend their services to anyone in need of a dependable cab service!"</p>
+          <div class="review-author">
+            <div class="review-initials">J</div>
+            <div>
+              <div class="review-name">Joan</div>
+              <div class="review-location">Visiting from Plettenberg Bay</div>
+            </div>
+          </div>
+          <div class="review-badge tripadvisor">
+            <svg width="16" height="16" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="11" fill="#34E0A1"/>
+              <circle cx="7.8" cy="11" r="3.3" fill="#fff"/>
+              <circle cx="16.2" cy="11" r="3.3" fill="#fff"/>
+              <circle cx="7.8" cy="11" r="1.3" fill="#0A0A0A"/>
+              <circle cx="16.2" cy="11" r="1.3" fill="#0A0A0A"/>
+              <path d="M12 11.2l-1.3 2.1h2.6z" fill="#0A0A0A"/>
+            </svg>
+            <span>TripAdvisor</span>
+          </div>
+        </a>
 
       </div>
     </div>
@@ -637,43 +626,52 @@ Lyle went the extra mile for us and really did his best to accommodate every wis
   <!-- CONTACT -->
   <section>
     <div id="contact">
-      <div class="section-eyebrow">Get in Touch</div>
-      <h2 class="section-title">Book Your <span>Ride</span></h2>
       <div class="contact-grid">
-        <div>
+        
+        <!-- LEFT COLUMN: Content & Buttons -->
+        <div class="contact-info-col">
+          <div class="section-eyebrow">Get in Touch</div>
+          <h2 class="section-title">Book Your <span>Ride</span></h2>
+          
           <p class="contact-desc">We keep it simple — no app needed, no fuss. Reach us on WhatsApp, give us a call, or drop us an email. We'll get back to you fast and have a driver ready.</p>
+          
           <div class="contact-options">
-
+            <!-- Fixed WhatsApp Link -->
             <a href="https://wa.me/27763884457" class="contact-btn" target="_blank">
               <div class="contact-icon wa">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               </div>
               <div class="contact-btn-text">
                 <div class="label">WhatsApp or Phone</div>
-                <div class="value">076 388 4457</div>
+                <div class="value">+27 76 388 4457</div>
               </div>
             </a>
-
+  
+            <!-- Email Link -->
             <a href="mailto:info@adamscabs.co.za" class="contact-btn">
               <div class="contact-icon em">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64A0FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
               </div>
               <div class="contact-btn-text">
                 <div class="label">Email</div>
-                <div class="value">info@adamscabs.co.za</div>
+                <div class="value">info@adamslocalcabs.co.za</div>
               </div>
             </a>
-
           </div>
         </div>
-
-        <div>
+  
+        <!-- RIGHT COLUMN: Map Box -->
+        <div class="contact-map-col">
           <div class="contact-map-placeholder">
-            <!--add img classes here to fit box-->
-          <div class="coverage-tag">
-            <strong>Coverage area:</strong> Oudtshoorn · George Airport · Cango Caves · De Rust · Calitzdorp · Uniondale &amp; surrounding Klein Karoo
+            <div class="map-image-container">
+              <img class="map-img" src="images/IMG-20260616-WA0010.webp" alt="Klein Karoo Coverage Map"/>
+            </div>
+            <div class="coverage-tag">
+              <strong>Coverage area:</strong> Oudtshoorn · George Airport · Cango Caves · De Rust · Calitzdorp · Uniondale &amp; surrounding Klein Karoo
+            </div>
           </div>
         </div>
+  
       </div>
     </div>
   </section>
@@ -681,9 +679,9 @@ Lyle went the extra mile for us and really did his best to accommodate every wis
   <!-- FOOTER -->
   <footer>
     <div class="nav-logo">
-      <img src="images/Gemini_Generated_Image_94jxu194jxu194jx-removebg-preview.png" class="logo-img" alt="Nav Logo">
+      <img src="images/Gemini_Generated_Image_vh8n1dvh8n1dvh8n-removebg-preview.png" class="logo-img" alt="Nav Logo">
   </div>
-    <div class="footer-copy">© 2025 Adams Local Cabs. Oudtshoorn, Western Cape.</div>
+    <div class="footer-copy">© 2026 Adams Local Cabs. Oudtshoorn, Western Cape.</div>
     <div class="footer-links">
       <a href="https://wa.me/27763884457" target="_blank">WhatsApp</a>
       <a href="tel:+27763884457">Call</a>
