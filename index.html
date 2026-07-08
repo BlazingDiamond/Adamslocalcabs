@@ -78,7 +78,7 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 2px 48px;
+      padding: 1px 48px;
       background: var(--nav-bg);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--nav-border);
@@ -170,7 +170,7 @@
     [data-theme="light"] .hero-bg {
       --hero-overlay-top: rgba(247, 243, 237, 0.5);
       --hero-overlay-mid: rgba(247, 243, 237, 0.78);
-      --hero-overlay-bottom: rgba(247, 243, 237, 1);
+      --hero-overlay-bottom: rgba(247, 243, 237, 0.5);
     }
     /* Karoo dust shimmer overlay */
     .hero-bg::after {
@@ -301,6 +301,19 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 2.4rem; color: var(--text); line-height: 1;
     }
+    .schedule-column {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-schedule-container {
+      display: flex;
+      gap: 20px; /* Adjust this value to change the spacing between the two columns */
+    }
+  }
+  .stat-small {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem; color: var(--text); line-height: 0.85;
+  }
     .stat-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
 
     /* ── KAROO STRIP ── */
@@ -549,7 +562,7 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo">
-      <img src="images/Gemini_Generated_Image_vh8n1dvh8n1dvh8n-removebg-preview.png" class="logo-img logo-dark" alt="Adams Local Cabs">
+      <img src="images/Gemini_Generated_Image_vh8n1dvh8n1dvh8n-removebg-preview (1).png" class="logo-img logo-dark" alt="Adams Local Cabs">
       <img src="images/light-mode-logo.png" class="logo-img logo-light" alt="Adams Local Cabs">
     </div>
     <div class="nav-actions">
@@ -579,7 +592,7 @@
     <div class="hero-content">
       <div class="hero-eyebrow">Oudtshoorn's Local Cab</div>
       <h1 class="hero-headline">Just a<br>Whatsapp<br>Away</h1>
-      <p class="hero-sub">We're a Local Affordable Cab/ Charter service in the heart of the Klein Karoo. We service the surrounding areas all along the garden route in the Western Cape.</p>
+      <p class="hero-sub">We are a Private Cab and Charter company based in Oudtshoorn-Western Cape, South Africa.<br>Need a transfer from George Airport to Oudtshoorn?<br>Need a ride in-and-around Oudtshoorn?<br>Want to visit our local tourist attractions, or just sightseeing?<br>We got you covered.</p>
       <div class="hero-actions">
         <a href="https://wa.me/27763884457" class="btn-primary" target="_blank">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -601,21 +614,27 @@
       <div class="about-text">
         <div class="section-eyebrow">About Us</div>
         <h2 class="section-title">Local Roots,<br><span>Reliable</span> Rides</h2>
-        <p class="section-body">We are a top-rated private Cab/ Charter company based in Oudtshoorn, South Africa. They are known for providing safe, reliable, and friendly transport for both local residents and tourists.
-
-          Whether you need a ride into Oudtshoorn from George Airport, Just sightseeing or visiting various tourist attractions (Cango Wildlife Ranch, Guesthouses or Cango Caves) in Oudtshoorn-we got covered.
-          Our vehicles offer seating capacity for solo/ couples and small groups up to 8 passengers.
-          We offer town-to-town transfers and also personalised day tours based on your intenary.</p>
+        <p class="section-body">We've built our reputation on providing safe, professional, and friendly transport for local travellers and tourists alike.<br><br>Our vehicles offer seating capacity for:<br>Solo or Couples<br>Small groups up-to-8 passengers.<br><br>We also offer:<br>City-to-City transfers Personalised day tours based on your intenary</p>
         <p class="section-body" style="margin-top:16px;">Whether you need a lift to the Cango Caves, a pickup from the George airport, or a reliable daily run around town — we've got you covered with safe, comfortable, and affordable transport.</p>
         <div class="about-stats">
           <div class="stat-box">
-            <div class="stat-number">3+</div>
-            <div class="stat-label">Years in Service<br>2023/712871/07</div>
+            <div class="stat-number">Business information:</div>
+            <div class="stat-label">Adams Local Cabs (Pty) Ltd<br>K2023/712871/07<br>3+ years in services</div>
           </div>
          
           <div class="stat-box">
-            <div class="stat-number">Mon-Sat</div>
-            <div class="stat-label">From 07:00 to 19:00<br>(pre-bookings on Sundays)</div>
+            <div class="stat-number">Operating Information:</div>
+            <div class="stat-schedule-container">
+              <div class="schedule-column">
+                <div class="stat-smaller">Mon-Sat</div>
+                <div class="stat-label">07:00-19:00</div>
+              </div>
+              
+              <div class="schedule-column">
+                <div class="stat-smaller">Sunday</div>
+                <div class="stat-label">Bookings Only</div>
+              </div>
+            </div>
           </div>
           
         </div>
@@ -739,7 +758,8 @@ Lyle went the extra mile for us and really did his best to accommodate every wis
           <div class="section-eyebrow">Get in Touch</div>
           <h2 class="section-title">Book Your <span>Ride</span></h2>
           
-          <p class="contact-desc">We keep it simple — no app needed, no fuss. Reach us on WhatsApp, give us a call, or drop us an email. We'll get back to you fast and have a driver ready.</p>
+          <p class="contact-desc">We keep it simple...<br>
+            Whatsapp us<br>Give us a Call<br>Drop an Email<br>We'll respond ASAP, and have your driver ready...</p>
           
           <div class="contact-options">
             <!-- Fixed WhatsApp Link -->
@@ -773,7 +793,7 @@ Lyle went the extra mile for us and really did his best to accommodate every wis
               <img class="map-img" src="images/IMG-20260616-WA0010.webp" alt="Klein Karoo Coverage Map"/>
             </div>
             <div class="coverage-tag">
-              <strong>Coverage area:</strong> Oudtshoorn · George Airport · Cango Caves · De Rust · Calitzdorp · Uniondale &amp; surrounding Klein Karoo
+              <strong>Coverage area:</strong><br> Cape Town International Airport to Oudtshoorn.<br>Garden Route,<br>MosselBay, Oudtshoorn,<br>Wilderness, Plettenberg Bay<br>Knysa and surrounding areas.
             </div>
           </div>
         </div>
@@ -785,7 +805,7 @@ Lyle went the extra mile for us and really did his best to accommodate every wis
   <!-- FOOTER -->
   <footer>
     <div class="nav-logo">
-      <img src="images/Gemini_Generated_Image_vh8n1dvh8n1dvh8n-removebg-preview.png" class="logo-img logo-dark" alt="Adams Local Cabs">
+      <img src="images/Gemini_Generated_Image_vh8n1dvh8n1dvh8n-removebg-preview (1).png" class="logo-img logo-dark" alt="Adams Local Cabs">
       <img src="images/light-mode-logo.png" class="logo-img logo-light" alt="Adams Local Cabs">
     </div>
     <div class="footer-copy">© 2026 Adams Local Cabs. Oudtshoorn, Western Cape.</div>
