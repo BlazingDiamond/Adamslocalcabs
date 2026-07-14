@@ -41,13 +41,7 @@
       --karoo-overlay-right: rgba(10, 10, 10, 0.85);
     }
 
-    html {
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-      width: 100%;
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -56,17 +50,12 @@
       font-size: 16px;
       line-height: 1.6;
       overflow-x: hidden;
-      width: 100%;
-      position: relative;
     }
 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: nowrap;
-      width: 100%;
-      max-width: 100vw;
       padding: 2px 48px 2px;
       background: var(--nav-bg);
       backdrop-filter: blur(10px);
@@ -76,13 +65,10 @@
       display: flex;
       align-items: center;
       line-height: 0;
-      min-width: 0;
     }
     .logo-img {
       max-height: 95px;
-      max-width: 55vw;
       width: auto;
-      height: auto;
       display: block;
     }
     .nav-logo span { color: var(--orange); }
@@ -114,13 +100,7 @@
 
     /* ── HERO ── */
     #hero {
-      height: 150vh; /* fallback for older Android WebViews without dvh support */
-      height: calc(var(--vh, 1vh) * 100);
-      height: 100dvh;
-      min-height: 600px;
-      max-height: 950px;
-      width: 100%;
-      max-width: 100vw;
+      height: 100vh; min-height: 850px;
       position: relative; overflow: hidden;
       display: flex; align-items: center;
     }
@@ -128,7 +108,7 @@
       position: absolute; inset: 0;
       background:
         linear-gradient(to bottom, var(--hero-overlay-top) 0%, var(--hero-overlay-mid) 60%, var(--hero-overlay-bottom) 100%),
-        url('images/MOUD6062.JPEG') center / cover no-repeat;
+        url('images/MOUD6062.JPEG') center / 100% 100% no-repeat;
     }
     /* Karoo dust shimmer overlay */
     .hero-bg::after {
@@ -151,7 +131,7 @@
     .hero-headline {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(3.5rem, 9vw, 7.5rem);
-      line-height: 0.90;
+      line-height: 0.80;
       letter-spacing: 0.01em;
       margin-bottom: 15px;
       padding: 2px;
@@ -736,31 +716,16 @@ Lyle went the extra mile for us and really did his best to accommodate every wis
   </footer>
 
   <script>
-
-    // Fix for Android's dynamic address bar miscalculating 100vh, which was
-    // causing the hero section (and its background) to render taller than the
-    // visible screen and appear cut off. Sets a real, current viewport height
-    // as a CSS variable that older Android browsers (without dvh support) use.
-    function setViewportHeight() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    setViewportHeight();
-    window.addEventListener('resize', setViewportHeight);
-    window.addEventListener('orientationchange', setViewportHeight);
-
-    // Safety net: if anything still overflows horizontally (common on some
-    // Android Chrome builds), catch it so the page never gains a sideways
-    // scrollbar that shifts content to the right.
-    function guardHorizontalOverflow() {
-      const docWidth = document.documentElement.clientWidth;
-      if (document.documentElement.scrollWidth > docWidth) {
-        document.documentElement.style.overflowX = 'hidden';
-        document.body.style.overflowX = 'hidden';
-      }
-    }
-    window.addEventListener('load', guardHorizontalOverflow);
-    window.addEventListener('resize', guardHorizontalOverflow);
+    // Car slide-in animation on scroll
+    const cards = document.querySelectorAll('.car-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    cards.forEach(c => observer.observe(c));
   </script>
 
 </body>
